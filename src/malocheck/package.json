@@ -1,0 +1,8 @@
+{
+    "name": "malocheck",
+    "version": "1.0.0",
+    "main": "malocheck.js",
+    "exports": {
+        "malocheck.js": "malocheck.js"
+    }
+}

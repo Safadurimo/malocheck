@@ -1,0 +1,9 @@
+{
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.formatOnSave": false   
+    },
+    
+}
