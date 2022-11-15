@@ -12,7 +12,7 @@
     },
     "scripts": {
         "test": "mocha",
-        "deploy_example_app": "gh-pages -d static/malocheck-react/build"
+        "deploy_example_app": "gh-pages -d example_app/build"
     },
     "dependencies": {
         "@mui/icons-material": "^5.2.5",
