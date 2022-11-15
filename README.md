@@ -2,6 +2,9 @@
 
 Gültigkeitscheck einer Marktlokationsnummer.
 
+# Demo
+https://safadurimo.github.io/malocheck/
+
 ## Entwicklung
 Das npm-Modul findet sich unter src.
 Getestet wird es durch das Kommando "npm run test" im Rootfolder
