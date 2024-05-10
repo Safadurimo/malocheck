@@ -106,5 +106,4 @@ var generateRandomMaloId = function() {
 
 };
 
-module.exports.checkMaloIdValid = checkMaloIdValid;
-module.exports.generateRandomMaloId = generateRandomMaloId;
+export {checkMaloIdValid, generateRandomMaloId };

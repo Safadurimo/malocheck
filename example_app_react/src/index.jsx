@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-var malocheck = require("malocheck");
+import {checkMaloIdValid, generateRandomMaloId}  from "malocheck";
 
 class Game extends React.Component {
   constructor(props) {
@@ -24,12 +24,12 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-    this.updateWithNewMaloId(malocheck.generateRandomMaloId());
+    this.updateWithNewMaloId(generateRandomMaloId());
   }
 
   updateWithNewMaloId(maloID) {
     let value = maloID;
-    let res = malocheck.checkMaloIdValid(value);
+    let res = checkMaloIdValid(value);
     this.setState({
       value: value,
       validity: res.valid,
@@ -42,7 +42,7 @@ class Game extends React.Component {
   }
 
   generateRandomMaloId(event) {
-    this.updateWithNewMaloId(malocheck.generateRandomMaloId());
+    this.updateWithNewMaloId(generateRandomMaloId());
   }
 
   render() {
@@ -116,5 +116,4 @@ class Game extends React.Component {
 }
 
 // ========================================
-
-ReactDOM.render(<Game />, document.getElementById("root"));
+export default Game

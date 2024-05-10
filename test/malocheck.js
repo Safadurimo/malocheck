@@ -1,6 +1,6 @@
-var assert = require('assert');
+import  assert from 'assert';
 
-var malocheck = require('../src/malocheck/malocheck.js');
+import * as malocheck from '../src/malocheck/malocheck.js';
 
 describe('Malo-Id validity', function() {
     describe('valid Malo', function() {
