@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-import {checkMaloIdValid, generateRandomMaloId}  from "malocheck";
+import { checkMaloIdValid, generateRandomMaloId } from "malocheck";
 
 class Game extends React.Component {
   constructor(props) {
@@ -96,14 +96,13 @@ class Game extends React.Component {
             label="Malo-Id"
             value={this.state.value}
             onChange={this.handleChange}
-            inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+            inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
           />
         </div>
         {validityElement}
         {!this.state.validity && (
           <div className="messages">
             <ul>
-              
               {messages.map((message) => (
                 <li> {message.message} </li>
               ))}
@@ -116,4 +115,4 @@ class Game extends React.Component {
 }
 
 // ========================================
-export default Game
+export default Game;

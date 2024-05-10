@@ -1,7 +1,6 @@
 {
-    "name": "malocheck",
-    "version": "1.0.0",
-    "main": "malocheck.js",
-    
-    "type": "module"
+  "name": "malocheck",
+  "version": "1.0.0",
+  "main": "malocheck.js",
+  "type": "module"
 }
