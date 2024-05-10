@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.css";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import { IconContext } from "react-icons";
@@ -41,7 +40,7 @@ class Game extends React.Component {
     this.updateWithNewMaloId(event.target.value);
   }
 
-  generateRandomMaloId(event) {
+  generateRandomMaloId() {
     this.updateWithNewMaloId(generateRandomMaloId());
   }
 

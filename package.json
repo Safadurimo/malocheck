@@ -14,8 +14,9 @@
   "scripts": {
     "test": "mocha",
     "prettier": "npx prettier - --write",
-    "lint": "npx eslint",
-    "deploy_example_app": "gh-pages -d example_app_react/dist"
+    "lint": "eslint",
+    "deploy_example_app": "gh-pages -d example_app_react/dist", 
+    "version": "eslint --version"
   },
   "devDependencies": {
    
