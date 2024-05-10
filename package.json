@@ -13,11 +13,21 @@
   },
   "scripts": {
     "test": "mocha",
+    "prettier": "npx prettier - --write",
+    "lint": "npx eslint",
     "deploy_example_app": "gh-pages -d example_app_react/dist"
   },
   "devDependencies": {
+   
+    "@eslint/js": "^9.2.0",
+    "eslint": "^9.2.0",
+    "globals": "^15.2.0",
+
+
     "gh-pages": "^4.0.0",
+ 
     "mocha": "^9.1.1",
+
     "prettier": "3.2.5"
   }
 }
