@@ -9,7 +9,7 @@ import TextField from "@mui/material/TextField";
 
 import { checkMaloIdValid, generateRandomMaloId } from "malocheck";
 
-class Game extends React.Component {
+class MaloCheckApp extends React.Component {
   constructor(props) {
     super(props);
 
@@ -114,4 +114,4 @@ class Game extends React.Component {
 }
 
 // ========================================
-export default Game;
+export default MaloCheckApp;
