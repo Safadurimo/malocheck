@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
+} from "react-router-dom";
 
 import MaloCheckApp from "./MaloCheckApp";
 import Startseite from "./Startseite";
@@ -11,10 +16,20 @@ const App = () => {
         <nav className="sidebar">
           <ul>
             <li>
-              <Link to="/">Startseite</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Startseite
+              </NavLink>
             </li>
             <li>
-              <Link to="/Marktlokations-ID">Marktlokations-ID</Link>
+              <NavLink
+                to="/Marktlokations-ID"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Marktlokations-ID
+              </NavLink>{" "}
             </li>
           </ul>
         </nav>

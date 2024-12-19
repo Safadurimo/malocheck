@@ -32,9 +32,9 @@
   margin: 10px 0;
 }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: #333;
+.sidebar ul li a.active {
+  font-weight: bold;
+  color: #007bff;
 }
 
 .content {
