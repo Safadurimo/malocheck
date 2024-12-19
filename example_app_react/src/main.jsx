@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-import MaloCheckApp from "./index.jsx";
+import App from "./App.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MaloCheckApp />
+    <App />
   </React.StrictMode>,
 );

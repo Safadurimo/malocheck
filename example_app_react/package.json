@@ -10,13 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@mui/material": "^5.2.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.2.0",
+    "malocheck": "file:../src/malocheck",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
-    "malocheck": "file:../src/malocheck"
+    "react-router-dom": "^7.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

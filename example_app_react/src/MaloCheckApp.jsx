@@ -113,5 +113,4 @@ class MaloCheckApp extends React.Component {
   }
 }
 
-// ========================================
 export default MaloCheckApp;
