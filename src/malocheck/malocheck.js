@@ -122,4 +122,13 @@ var generateRandomMaloId = function () {
   return maloId;
 };
 
-export { checkMaloIdValid, generateRandomMaloId };
+var bestandteilZerlegung = function (val) {
+
+  return [
+    val[0],
+    val.split("").slice(1, 10).join(''),
+    val[10]
+  ];
+}
+
+export { checkMaloIdValid, generateRandomMaloId, bestandteilZerlegung };
