@@ -125,9 +125,10 @@ var generateRandomMaloId = function () {
 var bestandteilZerlegung = function (val) {
 
   return [
-    val[0],
-    val.split("").slice(1, 10).join(''),
-    val[10]
+    { 'wert': val[0], 'beschreibung': "Ausgabestelle" },
+    { 'wert': val.split("").slice(1, 10).join(''), 'beschreibung': "" },
+    { 'wert': val[10], 'beschreibung': "Prüfziffer" },
+
   ];
 }
 
