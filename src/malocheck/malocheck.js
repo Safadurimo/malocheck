@@ -135,4 +135,10 @@ var bestandteilZerlegung = function (val) {
   ];
 };
 
-export { checkMaloIdValid, generateRandomMaloId, bestandteilZerlegung };
+var analyse = null;
+
+// export { checkMaloIdValid, generateRandomMaloId, bestandteilZerlegung };
+var generateRandom = generateRandomMaloId;
+var isValid = checkMaloIdValid;
+
+export { isValid, analyse, generateRandom, bestandteilZerlegung };

@@ -7,11 +7,13 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-import {
-  checkMaloIdValid,
-  generateRandomMaloId,
-  bestandteilZerlegung,
-} from "malocheck";
+// import {
+//   checkMaloIdValid,
+//   generateRandomMaloId,
+//   bestandteilZerlegung,
+// } from "malocheck";
+
+import * as malo_id from "malocheck"; // Direkt aus malocheck.js
 
 class MaloCheckApp extends React.Component {
   constructor(props) {
@@ -27,7 +29,7 @@ class MaloCheckApp extends React.Component {
   }
 
   componentDidMount() {
-    this.updateWithNewMaloId(generateRandomMaloId());
+    this.updateWithNewMaloId(malo_id.malo_id.generateRandom());
   }
 
   updateWithNewMaloId(maloID) {
@@ -39,8 +41,11 @@ class MaloCheckApp extends React.Component {
     };
 
     let value = maloID;
-    let res = checkMaloIdValid(value);
-    let zerlegung = res.valid ? bestandteilZerlegung(value) : null;
+    let res = malo_id.malo_id.isValid(value);
+    // checkMaloIdValid(value);
+    let zerlegung = res.valid
+      ? malo_id.malo_id.bestandteilZerlegung(value)
+      : null;
     let formatierteZerlegung = zerlegung ? formatiereZerlegung(zerlegung) : "";
     this.setState({
       value: value,
@@ -55,7 +60,7 @@ class MaloCheckApp extends React.Component {
   }
 
   generateRandomMaloId() {
-    this.updateWithNewMaloId(generateRandomMaloId());
+    this.updateWithNewMaloId(malo_id.malo_id.generateRandom());
   }
 
   render() {
