@@ -7,7 +7,11 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-import { checkMaloIdValid, generateRandomMaloId } from "malocheck";
+import {
+  checkMaloIdValid,
+  generateRandomMaloId,
+  bestandteilZerlegung,
+} from "malocheck";
 
 class MaloCheckApp extends React.Component {
   constructor(props) {
@@ -27,12 +31,24 @@ class MaloCheckApp extends React.Component {
   }
 
   updateWithNewMaloId(maloID) {
+    let formatiereZerlegung = function (zerlegung) {
+      let mapZerlegung = function (item) {
+        return item.wert.padEnd(20, " ") + item.beschreibung;
+      };
+      return zerlegung.map(mapZerlegung).join("\n");
+    };
+
     let value = maloID;
     let res = checkMaloIdValid(value);
+    let zerlegung = res.valid ? bestandteilZerlegung(value) : none;
+    let formatierteZerlegung = zerlegung
+      ? formatiereZerlegung(zerlegung)
+      : none;
     this.setState({
       value: value,
       validity: res.valid,
       messages: res.messages,
+      zerlegungsstring: formatierteZerlegung,
     });
   }
 
@@ -108,6 +124,16 @@ class MaloCheckApp extends React.Component {
             </ul>
           </div>
         )}
+        <div className="Zerlegung">
+          <TextField
+            id="outlined-basic"
+            value={this.state.zerlegungsstring}
+            label="Outlined"
+            variant="outlined"
+            multiline
+            sx={{ width: 400 }}
+          />
+        </div>
       </Stack>
     );
   }

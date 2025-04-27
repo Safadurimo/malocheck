@@ -1,7 +1,10 @@
 import assert from "assert";
-import { describe, it } from 'mocha';
+import { describe, it } from "mocha";
 
-import { checkMaloIdValid, bestandteilZerlegung } from "../src/malocheck/malocheck.js";
+import {
+  checkMaloIdValid,
+  bestandteilZerlegung,
+} from "../src/malocheck/malocheck.js";
 
 describe("Malo-Id validity", function () {
   describe("valid Malo", function () {
@@ -42,8 +45,8 @@ describe("Malo-Id sollte korrekt in ihre Bestandteile zerlegt werden können", f
   it("Gültige Marktloations-Id sollte in ihre Bestandteile zerlegt werden können", function () {
     let validMalo = "41373559241";
     let result = bestandteilZerlegung(validMalo);
-    assert.strictEqual(result[0], '4');
-    assert.strictEqual(result[1], '137355924');
-    assert.strictEqual(result[2], '1');
+    assert.strictEqual(result[0].wert, "4");
+    assert.strictEqual(result[1].wert, "137355924");
+    assert.strictEqual(result[2].wert, "1");
   });
 });

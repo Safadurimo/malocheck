@@ -123,13 +123,16 @@ var generateRandomMaloId = function () {
 };
 
 var bestandteilZerlegung = function (val) {
-
   return [
-    { 'wert': val[0], 'beschreibung': "Ausgabestelle" },
-    { 'wert': val.split("").slice(1, 10).join(''), 'beschreibung': "" },
-    { 'wert': val[10], 'beschreibung': "Prüfziffer" },
-
+    { "beginn:": 0, ende: 1, wert: val[0], beschreibung: "Ausgabestelle" },
+    {
+      "beginn:": 1,
+      ende: 10,
+      wert: val.split("").slice(1, 10).join(""),
+      beschreibung: "Vergebene Nummer",
+    },
+    { "beginn:": 10, ende: 11, wert: val[10], beschreibung: "Prüfziffer" },
   ];
-}
+};
 
 export { checkMaloIdValid, generateRandomMaloId, bestandteilZerlegung };
