@@ -40,10 +40,8 @@ class MaloCheckApp extends React.Component {
 
     let value = maloID;
     let res = checkMaloIdValid(value);
-    let zerlegung = res.valid ? bestandteilZerlegung(value) : none;
-    let formatierteZerlegung = zerlegung
-      ? formatiereZerlegung(zerlegung)
-      : none;
+    let zerlegung = res.valid ? bestandteilZerlegung(value) : null;
+    let formatierteZerlegung = zerlegung ? formatiereZerlegung(zerlegung) : "";
     this.setState({
       value: value,
       validity: res.valid,
@@ -128,7 +126,7 @@ class MaloCheckApp extends React.Component {
           <TextField
             id="outlined-basic"
             value={this.state.zerlegungsstring}
-            label="Outlined"
+            label="Erklärung der Bestandteile"
             variant="outlined"
             multiline
             sx={{ width: 400 }}
