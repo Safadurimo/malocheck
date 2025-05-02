@@ -18,7 +18,7 @@
  *  d) 70 - 69 = 1 -> Prüfziffer „1“
  * MaLo-ID: 4 1 3 7 3 5 5 9 2 4 1
  */
-var berechnePZ = function (val) {
+var pruefzifferLokUndWaggon = function (val) {
   var erste10Positionen = val.split("").slice(0, 10);
   var a = erste10Positionen
     .filter((x, i) => i % 2 === 0)
@@ -45,7 +45,7 @@ var isErsteZiffer1bis9 = function (val) {
 };
 
 var isPruefzifferKorrekt = function (val) {
-  return berechnePZ(val) === Number(val[10]);
+  return pruefzifferLokUndWaggon(val.slice(0, 10)) === Number(val[10]);
 };
 
 /**
@@ -91,7 +91,7 @@ var checkMaloIdValid = function (val) {
 
   var pruefzifferKorrekt = isPruefzifferKorrekt(val);
   if (!pruefzifferKorrekt) {
-    let korrektePruefziffer = berechnePZ(val);
+    let korrektePruefziffer = pruefzifferLokUndWaggon(val.slice(0, 10));
     messages.push({
       message: `Falsche Prüfziffer. Korrekt wäre ${korrektePruefziffer}`,
       pruefziffer: korrektePruefziffer,
@@ -118,7 +118,7 @@ var generateRandomMaloId = function () {
     maloId += random(0, 9);
   }
 
-  maloId += berechnePZ(maloId);
+  maloId += pruefzifferLokUndWaggon(maloId);
   return maloId;
 };
 

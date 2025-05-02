@@ -1,7 +1,7 @@
 import assert from "assert";
 import { describe, it } from "mocha";
 
-import * as malo_id from "../src/malocheck/malocheck.js"; // Direkt aus malocheck.js
+import { malo_id, mp_id } from "../src/malocheck/index.js"; // Direkt aus malocheck.js
 
 describe("Malo-Id validity", function () {
   describe("valid Malo", function () {
@@ -47,3 +47,20 @@ describe("Malo-Id sollte korrekt in ihre Bestandteile zerlegt werden können", f
     assert.strictEqual(result[2].wert, "1");
   });
 });
+
+/* describe("MP-Id validity", function () {
+  describe("valid MP-Id", function () {
+    it("Valid MP-Id should be recognized", function () {
+      let validMPID = "9904099000008";
+      let result = mp_id.isValid(validMPID);
+      assert.ok(result);
+    });
+  });
+  describe("Invalid MP-Id", function () {
+    it("Invalid MP-Id should be recognized", function () {
+      let validMPID = "9904099000007";
+      let result = mp_id.isValid(validMPID);
+      assert.strictEqual(result, false);
+    });
+  });
+}); */
